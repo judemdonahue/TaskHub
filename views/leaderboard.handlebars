@@ -1,3 +1,18 @@
 {{!-- leaderboard --}}
 
 {{!-- sort users by highest point totals. Sort by date, timeframe? --}}
+
+<h1> Scoreboard</h1>
+
+<div>
+    {{#each scores as |score|}}
+    <p>
+        {{score.id}}.
+        {{score.highest_points}}.
+        {{score.time}}.
+    </p>
+    {{/each}}
+</div>
+
+
+
