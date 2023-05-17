@@ -36,6 +36,11 @@ User.init(
         len: [8], 
       },
     },
+    total_points: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
   },
   {
     hooks: {

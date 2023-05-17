@@ -1,4 +1,6 @@
 const express = require("express");
+const path = require('path');
+const exphbs = require('express-handlebars');
 const session = require("express-session");
 const passport = require("./config/passport");
 const sequelize = require("./config/connection");
@@ -7,10 +9,15 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const hbs = exphbs.create();
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Sessions
 app.use(
@@ -20,10 +27,11 @@ app.use(
     saveUninitialized: true,
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Routes These can be cleaned up a bit Tutor Question?
+// Routes
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
