@@ -1,19 +1,20 @@
 const router = require("express").Router();
-const path = require("path");
 
 router.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "../layouts/main.handlebars"))
+  res.render("homepage")
 );
 
 router.get("/homepage", (req, res) =>
-  res.sendFile(path.join(__dirname, "../../views/homepage.handlebars"))
+  res.render("homepage")
 );
 
 router.get("/user", (req, res) =>
-  res.sendFile(path.join(__dirname, "../../views/user.handlebars"))
+  res.render("user")
 );
 
 router.get("/login", (req, res) =>
-  res.sendFile(path.join(__dirname, "../../views/login.handlebars"))
+  res.render("login")
 );
+
 module.exports = router;
+
