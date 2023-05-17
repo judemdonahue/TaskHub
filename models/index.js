@@ -1,27 +1,26 @@
 const Score = require('./scores');
 const User = require('./user');
-const Tasks = require('./Task');
-const UserTasks = require('./userTask');
+const Task = require('./Task');
+const UserTask = require('./userTask');
 
 
 
-User.hasMany(Tasks, {
-    foreignKey: '',
+User.hasMany(Task, {
+    foreignKey: 'task_id',
 });
 
 Score.belongsTo(User, {
-    foreignKey: '',
-    onDelete: '',
+    foreignKey: 'user_id',
 });
 
-Tasks.belongsToMany(User, {
-    through: UserTasks,
-    foreignKey: '',
+Task.belongsToMany(User, {
+    through: UserTask,
+    foreignKey: 'task_id',
 });
 
-User.belongsToMany(Tasks, {
-    through: UserTasks,
-    foreignKey: '',
+User.belongsToMany(Task, {
+    through: UserTask,
+    foreignKey: 'user_id',
 });
 
 
@@ -29,7 +28,7 @@ User.belongsToMany(Tasks, {
 module.exports = {
     Score,
     User,
-    Tasks,
-    UserTasks,
+    Task,
+    UserTask,
 
 };
