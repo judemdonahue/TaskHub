@@ -4,3 +4,23 @@
 {{!-- Progress bar with points. x/100 pts for the day --}}
 {{!-- Task list for the day(complete or incomplete) --}}
 {{!-- Time of last completion --}}
+<div class="card container w-50">
+    <div class="row card-header h-2">
+        <span class="col-3">{{user.username}}</span><span class="col-3 offset-6">last task completion</span>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Progress bar</li>
+        {{#each task}}
+            <li class="list-group-item">
+                <span>{{this.name}}</span>
+                <span>{{this.complete}}</span>
+            </li>
+        {{/each}}
+        <!-- for testing only  -->
+        <li class="list-group-item"><span>{{this.name}}</span><span>{{this.complete}}</span></li>
+        <li class="list-group-item"><span>{{this.name}}</span><span>{{this.complete}}</span></li>
+        <li class="list-group-item"><span>{{this.name}}</span><span>{{this.complete}}</span></li>
+        <li class="list-group-item"><span>{{this.name}}</span><span>{{this.complete}}</span></li>
+        <!-- for testing only -->
+    </ul>
+</div>
