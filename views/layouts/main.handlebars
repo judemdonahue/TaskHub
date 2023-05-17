@@ -16,8 +16,8 @@
 <nav>
     <a href="/">Home</a>
 </nav>
-<main>
-    <aside>
+<main class="container">
+    <aside class="col-3">
     {{!-- User data or login link. /partials/user-details.handlebars or /login.handlebars --}}
     {{#if loggedIn}}
         {{user-data}}
@@ -26,8 +26,8 @@
         <a href="/login">Login</a>
     {{/if}}
     </aside>
-    <div>
-    {{{body}}}
+    <div class="col-6">
+        {{{body}}}
     </div>
 </main>
 </body>
