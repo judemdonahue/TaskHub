@@ -24,13 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes These can be cleaned up a bit Tutor Question?
-app.use("/", require("./layouts/main.handlebars"));
-
-app.use("/homepage", require("./views/homepage.handlebars"));
-
-app.use("/user", require("./views/user.handlebars"));
-
-app.use("/login", require("./views/login.handlebars"));
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
