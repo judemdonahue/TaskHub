@@ -1,17 +1,35 @@
 const { userTask } = require('../models');
 
 
-
-// model: 'task',
-// key: 'id'
 const userTaskData = [
     {
+        completion_time: 30,
+        completed: true,
+        user_id: 1,
+        task_id: 1
+    },
 
-        
+    {
+        completion_time: 30,
+        completed: true,
+        user_id: 2,
+        task_id: 2
+    },
 
+    {
+        completion_time: 30,
+        completed: true,
+        user_id: 3,
+        task_id: 3
+    },
 
-
+    {
+        completion_time: 30,
+        completed: true,
+        user_id: 3,
+        task_id: 3
     }
+    
 ]
 
 
