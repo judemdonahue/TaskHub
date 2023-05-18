@@ -2,17 +2,49 @@
 
 {{!-- sort users by highest point totals. Sort by date, timeframe? --}}
 
-<h1> Scoreboard</h1>
+<div class="leader-home">
+    <div class="leader-container">
 
-<div>
-    {{#each scores as |score|}}
-    <p>
-        {{score.id}}.
-        {{score.highest_points}}.
-        {{score.time}}.
-    </p>
-    {{/each}}
+        <div class="list-title">
+            <h1>LEADERBOARD</h1>
+        </div>
+    
+        <div class="list-container">
+    
+            <div class="list-item">
+                <img src="images/PlacegholderPFP.png" alt="user picture">
+                <div class="item-header">
+                    <ul>
+                        <li><h1>1. Scrandon Screamy </h1><i class="fa-solid fa-award fa-2xl 1st" style="color: #ffd700"></i><h1 class="weekly">+§375</h1></li>
+                        <li><h2 class="alltime">§419,000</h2></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <img src="images/PlacegholderPFP.png" alt="user picture">
+                <div class="item-header">
+                    <ul>
+                        <li><h1>2. Scrandon Screamy </h1><i class="fa-solid fa-award fa-2xl 1st" style="color: #c0c0c0"></i><h1 class="weekly">+§375</h1></li>
+                        <li><h2 class="alltime">§419,000</h2></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <img src="images/PlacegholderPFP.png" alt="user picture">
+                <div class="item-header">
+                    <ul>
+                        <li><h1>3. Scrandon Screamy </h1><i class="fa-solid fa-award fa-2xl 1st" style="color: #cd7f32"></i><h1 class="weekly">+§375</h1></li>
+                        <li><h2 class="alltime">§419,000</h2></li>
+                    </ul>
+                </div>
+            </div>
+    
+            
+            </div>
+
+        </div>
+    
+    </div>
 </div>
-
-
-
