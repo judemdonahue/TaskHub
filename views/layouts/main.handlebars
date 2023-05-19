@@ -33,6 +33,16 @@
     <div>
     {{{body}}}
     </div>
+    <div>
+        {{#if tasks.length}}
+        {{#each tasks as |task|}}
+        <P>{{task.id}}</P>
+        {{task.task_name}}
+        {{task.points}}
+        {{/each}}
+        {{/if}}
+        
+    </div>
 </main>
 </body>
 

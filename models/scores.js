@@ -23,7 +23,7 @@ Score.init(
   {
     sequelize,
     freezeTableName: true,
-    underscpred: true,
+    underscored: true,
     modelName: "score",
   }
 );
