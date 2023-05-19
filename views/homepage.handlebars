@@ -5,39 +5,42 @@
 {{!-- User cards with most recent user activity under leader board. /partials/user-details.handlebars --}}
 
 
-    <div class="home">
-        <div class="container">
-            <div class="home-weapper">
-
-   
-
-    
-
-
-    <div class="home-center">
+<!-- home center start -->
+    <div class="home-center ">
         
-        <div class="feed-selector">
+        <div class="feed-selector d-flex justify-content-center ">
             <div class="feed-selector-container">
                 <div class="feed-selector-header">
-
+      
                     <!-- toggle switch -->
-                    <div class="toggle-switch">
-                        <input type="radio" name="toggle" id="option1" checked>
-                        <label for="option1"><img class="taskicon" src="images/Task.svg" alt=""></label>
-                        <input type="radio" name="toggle" id="option2">
-                        <label for="option2"><i class="fa-solid fa-user-plus"></i></label>
-                        <input type="radio" name="toggle" id="option3">
-                        <label for="option3"><i class="fa-solid fa-trophy"></i></label>
-                        <span class="slider"></span>
-                    </div>
-                    <!-- toggle switch end -->
-                    
+        <div class="toggle-switch">
+            <input type="radio" name="toggle" id="option1" checked>
+            <label for="option1"><img class="taskicon" src="images/Task.svg" alt=""></label>
+            <input type="radio" name="toggle" id="option2">
+            <label for="option2"><i class="fa-solid fa-user-plus"></i></label>
+            <input type="radio" name="toggle" id="option3">
+            <label for="option3"><i class="fa-solid fa-trophy"></i></label>
+            <span class="slider"></span>
+        </div>
+          <!-- toggle switch end -->
                 </div>
             </div>
         </div>
-        
+
+
+        {{!-- Task Feed List Container --}}
+        <ul>
+
+        </ul>
+        {{!-- Task Feed End  --}}
+
+
+        {{!-- LeaderBoard List Container --}}
+        <ol>
+
+        </ol>
+        {{!-- LeaderBoard List End --}}
     </div>
-    
     <!-- home-center end -->
 
             </div>
