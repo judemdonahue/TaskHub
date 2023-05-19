@@ -40,7 +40,15 @@
                     </ul>
                 </div>
             </div>
-    
+    <div>
+    {{#each scores as |score|}}
+    <p>
+        {{score.id}}.
+        {{score.highest_points}}.
+        {{score.time}}.
+    </p>
+    {{/each}}
+    </div>
             
             </div>
 
