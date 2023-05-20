@@ -24,24 +24,21 @@
             </div>
         </div>
     </header>
-<!-- Header End -->
-
-<main>
-    <aside>
-    {{!-- User data or login link. /partials/user-details.handlebars --}}
+<nav>
+    <a href="/">Home</a>
+</nav>
+<main class="container">
+    <aside class="col-3">
+    {{!-- User data or login link. /partials/user-details.handlebars or /login.handlebars --}}
+    {{#if loggedIn}}
+        {{user-data}}
+    {{else}}
+    <!-- Otherwise, show a link to login -->
+        <a href="/login">Login</a>
+    {{/if}}
     </aside>
-    <div>
-    {{{body}}}
-    </div>
-    <div>
-        {{#if tasks.length}}
-        {{#each tasks as |task|}}
-        <P>{{task.id}}</P>
-        {{task.task_name}}
-        {{task.points}}
-        {{/each}}
-        {{/if}}
-        
+    <div class="col-6">
+        {{{body}}}
     </div>
 </main>
 </body>

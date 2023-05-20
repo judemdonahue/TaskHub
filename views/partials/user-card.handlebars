@@ -1,18 +1,23 @@
-{{!-- User info --}}
+{{!-- To fill user feed cards in homepage. Also use for sidebar? --}}
 
-{{!-- Task cards by date for specified user. /user-data.handlebars --}}
+{{!-- User, streak if any --}}
+{{!-- Progress bar with points. x/100 pts for the day --}}
+{{!-- Task list for the day(complete or incomplete) --}}
+{{!-- Time of last completion --}}
+{{#each users as |user|}}
 <div class="card container w-50">
     <div class="row card-header h-2">
         <span class="col-3">{{user.username}}</span><span class="col-3 offset-6">last task completion</span>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Progress bar</li>
-        <!-- {{#each task}} -->
-        <li class="list-group-item">
-            <span>{{this.name}}</span>
-            <span>{{this.complete}}</span>
+        {{#each tasks as |task|}}
+        <li class="list-item d-flex container-fluid">
+            <img class="mr-4" src="images/PlacegholderPFP.png" alt="user picture">
+            <div class="container d-block row"><h3>{{task.id}}</h3><p>{{task.task_name}}</p></div>
+            <h1 class="daily mr-3">+§ X</h1>
         </li>
-        <!-- {{/each}} -->
+        {{/each}}
         <!-- for testing only  -->
         <li class="list-group-item"><span>{{this.name}}</span><span>{{this.complete}}</span></li>
         <li class="list-group-item"><span>{{this.name}}</span><span>{{this.complete}}</span></li>
@@ -21,3 +26,4 @@
         <!-- for testing only -->
     </ul>
 </div>
+{{/each}}
