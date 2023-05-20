@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const tasks = require("../partials/homepage");
+const tasks = require("../views/homepage");
 const { Task } = require("../models/Task");
 
 router.get("/tasks/:id", async (req, res) => {
@@ -14,7 +14,7 @@ router.get("/tasks/:id", async (req, res) => {
 // pulls id and attributes from task model
 
 // GET method route for task to completed
-app.get("/UserTask/:id", (req, res) => {
+router.get("/UserTask/:id", (req, res) => {
   res.render("user-card");
 });
 
@@ -35,3 +35,5 @@ router.put("../models/UserTask/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
