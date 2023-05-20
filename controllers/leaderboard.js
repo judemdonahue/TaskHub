@@ -2,7 +2,7 @@ const router = require("express").Router();
 const score = require("../partials/leaderboard");
 
 router.get("/", async (req, res) => {
-  const scoreData = await Score.findAll().catch((err) => {
+  const scoreData = await score.findAll().catch((err) => {
     res.json(err);
   });
   const scores = scoreData.map((score) => score.get({ plain: true }));
