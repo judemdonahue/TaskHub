@@ -1,4 +1,4 @@
-const { userTask } = require('../models');
+const { UserTask } = require('../models');
 
 
 const userTaskData = [
@@ -22,21 +22,8 @@ const userTaskData = [
         user_id: 3,
         task_id: 3
     },
-
-    {
-        completion_time: 30,
-        completed: true,
-        user_id: 3,
-        task_id: 3
-    }
-    
 ]
 
-
-
-
-
-
-const seedUserTasks = () => userTask.bulkCreate(userTaskData);
+const seedUserTasks = () => UserTask.bulkCreate(userTaskData);
 
 module.exports = seedUserTasks;

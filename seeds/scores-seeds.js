@@ -17,12 +17,6 @@ const scoreData = [
     }
 ]
 
-
-
-
-
-
-
 const seedScores = () => Score.bulkCreate(scoreData);
 
 module.exports = seedScores;
