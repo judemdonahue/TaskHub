@@ -30,16 +30,7 @@
 
         {{!-- Task Feed List Container --}}
 {{#each users}}
-  <div class="user">
-    <h2>{{this.username}}</h2>
-    <p>Total points: {{this.total_points}}</p>
-    <h3>Completed Tasks:</h3>
-    <ul>
-      {{#each this.tasks}}
-        <li>{{this.task_name}} - {{this.points}} points</li>
-      {{/each}}
-    </ul>
-  </div>
+{{> user-card}}
 {{/each}}
         {{!-- Task Feed End  --}}
 

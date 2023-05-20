@@ -20,6 +20,8 @@
             <div class="header-wrapper d-flex align-items-center px-4">
 
                 <div class="logoBox">Social Task Manager</div>
+        <button onclick="location.href='/'" class="btn btn-primary">Homepage</button>
+        <button onclick="location.href='/leaderboard'" class="btn btn-secondary">Leaderboard</button>
                 
             </div>
         </div>
@@ -34,14 +36,6 @@
     {{{body}}}
     </div>
     <div>
-        {{#if tasks.length}}
-        {{#each tasks as |task|}}
-        <P>{{task.id}}</P>
-        {{task.task_name}}
-        {{task.points}}
-        {{/each}}
-        {{/if}}
-        
     </div>
 </main>
 </body>

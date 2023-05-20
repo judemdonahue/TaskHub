@@ -1,0 +1,57 @@
+{{!-- To fill user feed cards in homepage. Also use for sidebar? --}}
+
+{{!-- User, streak if any --}}
+{{!-- Progress bar with points. x/100 pts for the day --}}
+{{!-- Task list for the day(complete or incomplete) --}}
+{{!-- Time of last completion --}}
+
+        {{!-- <li class="list-item d-flex container-fluid">
+            <img class="mr-4" src="images/PlacegholderPFP.png" alt="user picture">
+            <div class="container d-block row"><h3>User Placeholder</h3><p>Task Placeholder</p></div>
+            <h1 class="daily mr-3">+§ X</h1>
+        </li> --}}
+{{!-- 
+          <div class="user">
+    <h2>{{this.username}}</h2>
+    <p>Total points: {{this.total_points}}</p>
+    <h3>Completed Tasks:</h3>
+    <ul>
+      {{#each this.tasks}}
+        <li>{{this.task_name}} - {{this.points}} points</li>
+      {{/each}}
+    </ul>
+  </div> --}}
+
+{{!-- {{#each users as |user|}} --}}
+<div class="user card container w-50">
+  <div class="row card-header h-2">
+    <img class="mr-4" src="images/PlacegholderPFP.png" alt="user picture">
+    <span class="col-3">{{this.username}}</span>
+    <span class="col-3 offset-6">last task completion: {{getLastCompletionTime this.tasks}}</span>
+  </div>
+  <div>Total points: {{this.total_points}}</div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Progress bar</li>
+    {{#each this.tasks}}
+    <li class="list-item d-flex container-fluid">
+      <div class="container d-block row">
+        <h3>{{this.id}}</h3>
+        <p>{{this.task_name}}</p>
+        <p>
+          {{#if this.UserTask.completed}}
+            Finished
+          {{else}}
+            Not Finished
+          {{/if}}
+        </p>
+      </div>
+      <h1 class="daily mr-3">+§ X</h1>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+
+
+
+
+{{!-- {{/each}} --}}

@@ -5,12 +5,14 @@ const UserTask = require('./userTask');
 
 User.belongsToMany(Task, {
     through: UserTask,
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    as: 'tasks'
   });
   
   Task.belongsToMany(User, {
     through: UserTask,
-    foreignKey: 'task_id'
+    foreignKey: 'task_id',
+    as: 'users'
   });
   
   User.hasMany(UserTask, {
@@ -31,7 +33,7 @@ User.belongsToMany(Task, {
     foreignKey: 'task_id'
   });
   
-  
+
 module.exports = {
     Score,
     User,
