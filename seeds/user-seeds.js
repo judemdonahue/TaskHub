@@ -28,15 +28,6 @@ const userData = [
         password: 'xxxx',
         total_points: 70
     },
-
-    
-
-
-
-
-
-
-
 ]
 
 
