@@ -4,51 +4,37 @@
 
 <div class="leader-bg">
     <div class="leader-container col-12 my-4">
-        <p class=" list-title text-center text-lg font-weight-bold">LEADERBOARD</p>
+            <p class=" list-title text-center text-lg font-weight-bold">LEADERBOARD</p>
+    
+            <ol>
+                <li class="list-item d-flex container-fluid">
+                    <img class="mr-4" src="/assets/images/PlaceholderPFP.png" alt="user picture">
+                    <div class="container d-block row"><h1 class="">1. Scrandon Screamy <i class="fa-solid fa-award" style="color: gold"></i></h1><h2 class="alltime justify-content-start ml-1">§419,000</h2></div>
+                    <h1 class="weekly mr-3">+§375</h1>
+                </li>
+    
+                <li class="list-item d-flex container-fluid">
+                    <img class="mr-4" src="/assets/images/PlaceholderPFP.png" alt="user picture">
+                    <div class="container d-block row"><h1 class="">2. Swag Goblin <i class="fa-solid fa-award" style="color: silver"></i></h1><h2 class="alltime justify-content-start ml-1">§419,000</h2></div>
+                    <h1 class="weekly mr-3">+§375</h1>
+                </li>
+    
+                <li class="list-item d-flex container-fluid">
+                    <img class="mr-4" src="/assets/images/PlaceholderPFP.png" alt="user picture">
+                    <div class="container d-block row"><h1 class="">3. Duende <i class="fa-solid fa-award" style="color: rosybrown"></i></h1><h2 class="alltime justify-content-start ml-1">§419,000</h2></div>
+                    <h1 class="weekly mr-3">+§375</h1>
+                </li>
 
+            {{#each scores as |score|}}
+                <li>
+                    {{score.id}}.
+                    {{score.highest_points}}.
+                    {{score.time}}.
+                </li>
+            {{/each}}
 
-        <ol>
-            <li class="list-item d-flex container-fluid">
-                <img class="mr-4" src="images/PlacegholderPFP.png" alt="user picture">
-                <div class="container d-block row"><h1 class="">1. Scrandon Screamy <i class="fa-solid fa-award" style="color: gold"></i></h1><h2 class="alltime justify-content-start ml-1">§419,000</h2></div>
-                <h1 class="weekly mr-3">+§375</h1>
-            </li>
-
-
-            <div class="list-item">
-                <img src="images/PlacegholderPFP.png" alt="user picture">
-                <div class="item-header">
-                    <ul>
-                        <li><h1>3. Scrandon Screamy </h1><i class="fa-solid fa-award fa-2xl 1st" style="color: #cd7f32"></i><h1 class="weekly">+§375</h1></li>
-                        <li><h2 class="alltime">§419,000</h2></li>
-                    </ul>
-                </div>
-            </div>
-    <div>
-    {{#each scores as |score|}}
-    <p>
-        {{score.id}}.
-        {{score.highest_points}}.
-        {{score.time}}.
-    </p>
-    {{/each}}
-    </div>
-            
-            </div>
-
-            <li class="list-item d-flex container-fluid">
-                <img class="mr-4" src="images/PlacegholderPFP.png" alt="user picture">
-                <div class="container d-block row"><h1 class="">2. Swag Goblin <i class="fa-solid fa-award" style="color: silver"></i></h1><h2 class="alltime justify-content-start ml-1">§419,000</h2></div>
-                <h1 class="weekly mr-3">+§375</h1>
-            </li>
-
-
-            <li class="list-item d-flex container-fluid">
-                <img class="mr-4" src="images/PlacegholderPFP.png" alt="user picture">
-                <div class="container d-block row"><h1 class="">3. Duende <i class="fa-solid fa-award" style="color: rosybrown"></i></h1><h2 class="alltime justify-content-start ml-1">§419,000</h2></div>
-                <h1 class="weekly mr-3">+§375</h1>
-            </li>
-        </ol>
- 
+            </ol>
+     
     </div>
 </div>
+
