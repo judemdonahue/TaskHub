@@ -45,9 +45,6 @@ a:focus, a:hover{
   color: inherit;
 }
 
-
-
-
 /* header section style start here */
 header{
   width: 100%;
@@ -250,16 +247,7 @@ header{
 .post-title p{
   color: var(--gray);
 }
-
-
-
 /* Task Feed end */
-
-
-
-
-
-
 
 /* Slider Toggle CSS */
 .toggle-switch {
@@ -343,11 +331,6 @@ header{
   background-image: url("./images/trophy-solid.svg");
 }
 
-
-
-
-
-
 /* Progress Ring CSS */
 .wrapper{
   padding-top: 20px;
@@ -358,6 +341,9 @@ header{
   align-items: center;
   justify-content: space-between;
 }
+.progressCircle{
+  border: none !important;
+}
 .wrapper .card{
   background: #fff;
   width: 95%;
@@ -367,7 +353,7 @@ header{
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  border: none !important;
 }
 .wrapper .card .circle{
   position: relative;

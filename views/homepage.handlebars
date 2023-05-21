@@ -5,9 +5,17 @@
 {{!-- User cards with most recent user activity under leader board. /partials/user-details.handlebars --}}
 
 {{!-- Task Feed List Container --}}
-    <div>
-        {{#each users}}
-        {{> user-card}}
-        {{/each}}
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            {{> homepage-sidebar}}
+        </div>
+        <div class="col-6">
+            {{#each users}}
+            {{> user-card}}
+            {{/each}}
+        </div>
     </div>
-    {{!-- Task Feed End  --}}
+
+</div>
+{{!-- Task Feed End  --}}
