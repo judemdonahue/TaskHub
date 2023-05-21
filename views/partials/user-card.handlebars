@@ -8,26 +8,29 @@
 <div class="user card container w-50 mt-3">
   <div class="row card-header h-2"> 
       <img class="col-2" src="images/PlacegholderPFP.png" alt="user picture">
-      <span class="col-3 align-middle">{{this.username}}</span>
-      <span class="col-3 offset-4">last task completion: 5/21 @ 12:22pm {{!-- {{getLastCompletionTime this.task}} --}} </span>
+      <h5 class="col-3 mt-2">{{this.username}}</h5>
+      <span class="col-3 offset-4">last task completion:<br>5/21 @ 12:22pm {{!-- {{getLastCompletionTime this.task}} --}} </span>
   </div>
-  <div class="m-2 ml-3">Total points: {{this.total_points}}</div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Progress bar Placeholder</li>
+    <li class="list-group-item">Total points: {{this.total_points}}</li>
+    <li class="list-group-item ">Progress bar Placeholder</li>
     {{#each this.tasks}}
-    <li class="list-item d-flex container-fluid">
-      <div class="container d-block row">
-        <h3>{{this.id}}</h3>
-        <p>{{this.task_name}}</p>
-        <p>
-          {{#if this.UserTask.completed}}
-            Finished
-          {{else}}
-            Not Finished
-          {{/if}}
-        </p>
+    <li class="list-group-item container">
+      <div class="row">
+        <h5 class="col-1">{{this.id}}</h5>
+        <div class="col-8">
+          <p>
+            {{this.task_name}}
+            {{#if this.UserTask.completed}}
+              Finished
+            {{else}}
+              Not Finished
+            {{/if}}
+          </p>
+        </div>
+      
+      <h5 class="daily col-2 align-right">+§ X</h5>
       </div>
-      <h1 class="daily mr-3">+§ X</h1>
     </li>
     {{/each}}
   </ul>
