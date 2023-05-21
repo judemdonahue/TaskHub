@@ -5,33 +5,15 @@
 {{!-- Task list for the day(complete or incomplete) --}}
 {{!-- Time of last completion --}}
 
-        {{!-- <li class="list-item d-flex container-fluid">
-            <img class="mr-4" src="images/PlacegholderPFP.png" alt="user picture">
-            <div class="container d-block row"><h3>User Placeholder</h3><p>Task Placeholder</p></div>
-            <h1 class="daily mr-3">+§ X</h1>
-        </li> --}}
-{{!-- 
-          <div class="user">
-    <h2>{{this.username}}</h2>
-    <p>Total points: {{this.total_points}}</p>
-    <h3>Completed Tasks:</h3>
-    <ul>
-      {{#each this.tasks}}
-        <li>{{this.task_name}} - {{this.points}} points</li>
-      {{/each}}
-    </ul>
-  </div> --}}
-
-{{!-- {{#each users as |user|}} --}}
-<div class="user card container w-50">
-  <div class="row card-header h-2">
-    <img class="mr-4" src="images/PlacegholderPFP.png" alt="user picture">
-    <span class="col-3">{{this.username}}</span>
-    <span class="col-3 offset-6">last task completion: {{getLastCompletionTime this.tasks}}</span>
+<div class="user card container w-50 mt-3">
+  <div class="row card-header h-2"> 
+      <img class="col-2" src="images/PlacegholderPFP.png" alt="user picture">
+      <span class="col-3 align-middle">{{this.username}}</span>
+      <span class="col-3 offset-4">last task completion: 5/21 @ 12:22pm {{!-- {{getLastCompletionTime this.task}} --}} </span>
   </div>
-  <div>Total points: {{this.total_points}}</div>
+  <div class="m-2 ml-3">Total points: {{this.total_points}}</div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Progress bar</li>
+    <li class="list-group-item">Progress bar Placeholder</li>
     {{#each this.tasks}}
     <li class="list-item d-flex container-fluid">
       <div class="container d-block row">
@@ -50,8 +32,3 @@
     {{/each}}
   </ul>
 </div>
-
-
-
-
-{{!-- {{/each}} --}}

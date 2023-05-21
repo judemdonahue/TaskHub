@@ -13,9 +13,9 @@ router.get("/tasks/:id", async (req, res) => {
 });
 // pulls id and attributes from task model
 
-// GET method route for task to completed
+// GET method route for task to complete
 router.get("/UserTask/:id", (req, res) => {
-  res.render("user-card");
+  res.render("user-card", { userTask });
 });
 
 // UPDATE a user
