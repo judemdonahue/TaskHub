@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Social Thingamabob</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <script src="https://kit.fontawesome.com/7c687f214c.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
@@ -14,8 +14,8 @@
 
 <body class="bg-light">
 
-<!-- Header Start -->
-    <header class="container-fluid d-flex">
+    <!-- Header Start -->
+    <header class="container-fluid d-flex bg-light">
         <div class="header-container col-11">
             <div class="header-wrapper d-flex align-items-center px-4">
 
@@ -26,10 +26,81 @@
             </div>
         </div>
     </header>
+    {{!-- Header End --}}
 
-<main>
-    {{{body}}}
+<main class="bg-light">
+    <div class="d-flex justify-content-center">
+        <div class="col-11">
+            <div class="d-flex justify-content-start">
+        
+            <!-- user-menu start -->
+            <div class="user-menu d-flex col-2">
+        
+                <div class="profile d-flex align-items-center">
+                    <img src="/assets/images/PlaceholderPFP.png" alt="user">
+                    <h2>Username Placeholder</h2>
+                </div>
+               
+                <div class="pages align-items-center">
+                    <h4 class="mini-headign d-flex align-items-center">Profile</h4>
+        
+                    <div class="pages profile d-flex">
+                        <h2 class="text-center">+§ X This Week..</h2>
+                    </div>
+        
+                    <button class="see-more-btn">Weekly Summary  <i class="fa-solid fa-angle-down"></i></button>
+
+                    <!-- Prog Ring start -->
+                    <div class="wrapper pages d-flex align-items-center">
+                        <div class="card">
+                          <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                          </div>
+                          <div class="text">Daily Progress</div>
+                        </div>
+                      </div>
+                    <!-- Prog ring end -->
+        
+                      <button class="see-more-btn">See more <i class="fa-solid fa-angle-down"></i></button>
+                </div>
+        
+            </div>
+            <!-- user-menu end -->
+        
+            <!-- home center start -->
+<div class="home-center ">
+    {{!-- Feed Selector --}}
+    <div class="feed-selector d-flex justify-content-center ">
+        <div class="feed-selector-container">
+            <div class="feed-selector-header">
+        <!-- toggle switch -->
+        <div class="toggle-switch">
+            <input type="radio" name="toggle" id="option1" checked>
+            <label for="option1"><img class="taskicon" src="/assets/images/Task.svg" alt=""></label>
+            <input type="radio" name="toggle" id="option2">
+            <label for="option2"><i class="fa-solid fa-user-plus"></i></label>
+            <input type="radio" name="toggle" id="option3">
+            <label for="option3"><i class="fa-solid fa-trophy"></i></label>
+            <span class="slider"></span>
+        </div>
+        <!-- toggle switch end -->
+            </div>
+        </div>
+    </div>
+    {{!-- Feed Selector --}}
+
+    
+        {{{body}}}
+
+            </div>
+        </div>
+    </div>
 </main>
+
+    <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 
 </html>
