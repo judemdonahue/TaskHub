@@ -20,26 +20,15 @@
             <div class="header-wrapper d-flex align-items-center px-4">
 
                 <div class="logoBox">Social Task Manager</div>
+        <button onclick="location.href='/'" class="btn btn-primary">Homepage</button>
+        <button onclick="location.href='/leaderboard'" class="btn btn-secondary">Leaderboard</button>
                 
             </div>
         </div>
     </header>
-<nav>
-    <a href="/">Home</a>
-</nav>
-<main class="container">
-    <aside class="col-3">
-    {{!-- User data or login link. /partials/user-details.handlebars or /login.handlebars --}}
-    {{#if loggedIn}}
-        {{user-data}}
-    {{else}}
-    <!-- Otherwise, show a link to login -->
-        <a href="/login">Login</a>
-    {{/if}}
-    </aside>
-    <div class="col-6">
-        {{{body}}}
-    </div>
+
+<main>
+    {{{body}}}
 </main>
 </body>
 
