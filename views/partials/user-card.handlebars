@@ -15,7 +15,7 @@
       <li class="list-group-item">Total points: {{this.total_points}}</li>
       <li>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
           </div>
       </li>
     {{#each this.tasks}}
@@ -23,7 +23,7 @@
       <div class="row">
         <h5 class="col-1">{{this.id}}</h5>
         <div class="col-8">
-          <p>
+          <p class="text-center">
             {{this.task_name}}
             {{#if this.UserTask.completed}}
               Finished
@@ -32,8 +32,7 @@
             {{/if}}
           </p>
         </div>
-      
-      <h5 class="daily col-2 align-right">+§ X</h5>
+      <h5 class="daily col-3">+§ {{this.points}}</h5>
       </div>
     </li>
     {{/each}}

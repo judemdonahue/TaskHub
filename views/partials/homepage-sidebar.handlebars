@@ -3,36 +3,42 @@
 {{!-- Login button if not logged in --}}
 {{!-- Username. Link to /partials/user.handlebars --}}
 {{!-- Nav functions --}}
-{{!--  --}}
-<!-- user-menu start -->
-<div class="user-menu d-flex col-2">
 
-    <div class="profile d-flex align-items-center">
-        <img src="/assets/images/PlaceholderPFP.png" alt="user">
-        <h2>Username Placeholder</h2>
-    </div>
-    <div class="pages profile">
-        <h2 class="align-items-center">+§ X This Week..</h2>
-    </div>
+<div class="d-flex justify-content-center mt-3 ">
+    <div class="col-11">
+        <div class="d-flex justify-content-start">
+            <!-- user-menu start -->
+            <div class="user-menu d-flex col-2">
+                <div class="profile d-flex align-items-center">
+                    <img src="/assets/images/PlaceholderPFP.png" alt="user">
+                    <h2>Username Placeholder</h2>
+                </div>
+            
+                <div class="pages align-items-center">
+                    <h4 class="mini-headign d-flex align-items-center">Profile</h4>
+        
+                    <div class="pages profile d-flex">
+                        <h2 class="text-center">+§ X This Week..</h2>
+                    </div>
+        
+                    <button class="see-more-btn">Weekly Summary  <i class="fa-solid fa-angle-down"></i></button>
 
-    <div class="pages align-items-center">
-        <h4 class="mini-headign d-flex align-items-center">Profile</h4>
-        <button class="see-more-btn">Weekly Summary  <i class="fa-solid fa-angle-down"></i></button>
-
-        <!-- Prog Ring start -->
-        <div class="wrapper pages d-flex align-items-center">
-            <div class="card">
-            <div class="circle">
-                <div class="bar"></div>
-                <div class="box"><span></span></div>
-            </div>
-            <div class="text">Daily Progress</div>
+                    <!-- Prog Ring start -->
+                    <div class="wrapper pages d-flex align-items-center">
+                        <div class="card">
+                        <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                        </div>
+                        <div class="text">Daily Progress</div>
+                        </div>
+                    </div>
+                    <!-- Prog ring end -->
+        
+                    <button class="see-more-btn">See more <i class="fa-solid fa-angle-down"></i></button>
+                </div>
             </div>
         </div>
-        <!-- Prog ring end -->
-
-        <button class="see-more-btn">See more <i class="fa-solid fa-angle-down"></i></button>
     </div>
-
 </div>
 <!-- user-menu end -->
