@@ -7,9 +7,9 @@
 
 <div class="list-item"> 
   <div class="row h-2">
-        <img class="mb-4" src="/assets/images/PlaceholderPFP.png" alt="user picture">
-        <h5 class="mt-2">{{this.username}}</h5>
-        <span class="offset-4">last task completion:<br>5/21 @ 12:22pm {{!-- {{getLastCompletionTime this.task}} --}} </span>
+        <img class="mb-4 col-2" src="/assets/images/PlaceholderPFP.png" alt="user picture">
+        <h5 class="mt-2 col-2">{{this.username}}</h5>
+        <span class="offset-5">last task completion:<br>5/21 @ 12:22pm {{!-- {{getLastCompletionTime this.task}} --}} </span>
   </div>
       <ul class="list-group list-group-flush">
       <li class="list-group-item">Total points: {{this.total_points}}</li>
@@ -19,7 +19,7 @@
           </div>
       </li>
     {{#each this.tasks}}
-    <li class="list-group-item container align-middle">
+    <li class="list-group-item container">
       <div class="row">
         <h5 class="col-1">{{this.id}}</h5>
         <div class="col-8">
