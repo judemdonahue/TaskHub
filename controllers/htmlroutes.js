@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const { addLastCompletedTask , sortUserByTime } = require('../utils/helper');
+const { addLastCompletedTask , sortUserByTime , ensureAuthenticated} = require('../utils/helper');
 const { User, Task, UserTask } = require('../models');
 
-router.get('/', async (req, res) => {
+router.get('/', ensureAuthenticated, async (req, res) => {
     const usersData = await User.findAll({
         attributes: ['id', 'username', 'email', 'password', 'total_points'],
         include: [
@@ -34,6 +34,6 @@ router.get("/user", (req, res) => res.render("user"));
 
 router.get("/login", (req, res) => res.render("login" , { hideHeader: true }));
 
-router.get("/leaderboard", (req, res) => res.render("leaderboard"));
+router.get("/leaderboard", ensureAuthenticated, (req, res) => res.render("leaderboard"));
 
 module.exports = router;

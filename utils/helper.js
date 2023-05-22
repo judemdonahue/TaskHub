@@ -44,8 +44,16 @@ function sortUserByTime(users) {
     return 0;
   })};
 
+  function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect('/login');
+  }
+
 module.exports = {
     formatDate,
     addLastCompletedTask,
-    sortUserByTime
+    sortUserByTime,
+    ensureAuthenticated
 };
