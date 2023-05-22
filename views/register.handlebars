@@ -1,26 +1,38 @@
 {{!-- User registration page --}}
-
+<head>
+    <script src="../assets/js/register.js"></script>
+</head>
 {{!-- Redirect to homepage once registered. --}}
-<div class="container text-center w-50">
-    <form class="row mx-5">
-        <div class="col-lg-6 mt-5">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail">
+<div class="container text-center">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h3 class="mb-4">Register</h3>
+                    <form id="register-form">
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="inputUsername">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Must be at least 8 characters">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Passwords must match!">
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" id="register-btn" class="btn btn-primary w-100">Sign up!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6 mt-5">
-            <label for="inputEmail">Username</label>
-            <input type="text" class="form-control" id="inputUsername">
-        </div>
-        <div class="col-lg-6 mt-5">
-            <label for="inputPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Must be at least 8 characters">
-        </div>
-        <div class="col-lg-6 mt-5">
-            <label for="inputPassword" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="confirmPassword" placeholder="Passwords must match!">
-        </div>
-        <div class="col-12 text-center mt-5">
-            <button type="submit" class="btn btn-primary">Sign up!</button>
-        </div>
-    </form>
+    </div>
 </div>
+

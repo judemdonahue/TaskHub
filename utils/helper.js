@@ -1,20 +1,59 @@
-module.exports = {
-    getLastCompletionTime: (tasks) => {
-        if (tasks.length === 0) {
-            return 'No tasks completed';
-        }
+const Handlebars = require('handlebars');
+const moment = require('moment');
 
-        // Filter out tasks without UserTask
-        tasks = tasks.filter(task => task.UserTask);
+function formatDate(date, format) {
+    return moment(date).format(format);
+}
 
-        if (tasks.length === 0) {
-            return 'No tasks with UserTask';
-        }
+function addLastCompletedTask(users) {
+    users.forEach(user => {
+      // Calculate the total number of tasks and the number of completed tasks
+      let totalTasks = user.tasks.length;
+      let completedTasks = user.tasks.filter(task => task.userTask.completed).length;
+  
+      // Calculate the completion percentage
+      let completionPercentage = (completedTasks / totalTasks) * 100;
+  
+      // Add to the user object
+      user.totalTasks = totalTasks;
+      user.completedTasks = completedTasks;
+      user.completionPercentage = completionPercentage;
+  
+      // Find the last completed task
+      let lastCompletedTask = user.tasks.filter(task => task.userTask.completed).sort((a, b) => new Date(b.userTask.completion_time) - new Date(a.userTask.completion_time))[0];
+  
+      // Add to the user object
+      if (lastCompletedTask) {
+        user.lastCompletedTask = lastCompletedTask;
+      }
+    });
+  
+    return users;
+  }
+  
 
-        // Sort tasks by completion_time in descending order
-        tasks.sort((a, b) => new Date(b.UserTask.completion_time) - new Date(a.UserTask.completion_time));
-
-        // Return the completion time of the first task in the sorted array
-        return tasks[0].UserTask.completion_time;
+function sortUserByTime(users) {
+    users.sort((a, b) => {
+    if (a.lastCompletedTask && b.lastCompletedTask) {
+      return new Date(b.lastCompletedTask.userTask.completion_time) - new Date(a.lastCompletedTask.userTask.completion_time);
+    } else if (a.lastCompletedTask) {
+      return -1;
+    } else if (b.lastCompletedTask) {
+      return 1;
     }
+    return 0;
+  })};
+
+  function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect('/login');
+  }
+
+module.exports = {
+    formatDate,
+    addLastCompletedTask,
+    sortUserByTime,
+    ensureAuthenticated
 };

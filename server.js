@@ -26,13 +26,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   session({
     secret: "eventually-in-env",
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
   })
 );
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+  // if user is authenticated in the session, carry on 
+  if (req.isAuthenticated()) {
+    // make user object available in handlebars templates
+    res.locals.user = req.user.get({ plain: true });
+  }
+  next();
+});
+
 
 // Routes
 app.use(routes);

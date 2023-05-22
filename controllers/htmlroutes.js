@@ -1,7 +1,8 @@
 const router = require("express").Router();
+const { addLastCompletedTask , sortUserByTime , ensureAuthenticated} = require('../utils/helper');
 const { User, Task, UserTask } = require('../models');
 
-router.get('/', async (req, res) => {
+router.get('/', ensureAuthenticated, async (req, res) => {
     const usersData = await User.findAll({
         attributes: ['id', 'username', 'email', 'password', 'total_points'],
         include: [
@@ -18,19 +19,21 @@ router.get('/', async (req, res) => {
         order: [['total_points', 'DESC']],
     });
 
-    const users = usersData.map((user) => user.get({ plain: true }));
+    let users = usersData.map((user) => user.get({ plain: true }));
+
+    users = addLastCompletedTask(users);
+
+    sortUserByTime(users)
+    // console.dir(users, { depth: null });
     res.render('homepage', { users });
 });
 
-
-router.get("/", (req, res) => res.render("homepage"));
-
-router.get("/register", (req, res) => res.render("register"))
+router.get("/register", (req, res) => res.render("register" , { hideHeader: true }))
 
 router.get("/user", (req, res) => res.render("user"));
 
-router.get("/login", (req, res) => res.render("login"));
+router.get("/login", (req, res) => res.render("login" , { hideHeader: true }));
 
-router.get("/leaderboard", (req, res) => res.render("leaderboard"));
+router.get("/leaderboard", ensureAuthenticated, (req, res) => res.render("leaderboard"));
 
 module.exports = router;

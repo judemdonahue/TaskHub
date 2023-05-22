@@ -23,11 +23,18 @@ passport.use(new LocalStrategy({
 ));
 
 passport.serializeUser((user, cb) => {
-    cb(null, user);
-  });
-  
-  passport.deserializeUser((obj, cb) => {
-    cb(null, obj);
-  });
+  cb(null, user.id);
+});
+
+passport.deserializeUser((id, cb) => {
+  User.findOne({ where: { id } })
+    .then(user => {
+      cb(null, user);
+    })
+    .catch(err => {
+      cb(err);
+    });
+});
+
   
   module.exports = passport;
