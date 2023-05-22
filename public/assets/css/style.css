@@ -70,6 +70,16 @@ header{
   margin-top: -3px;
   margin-left: 3px;
 }
+.logoBox{
+  width: 7%;
+}
+.logoBox img{
+  width: 200px;
+}
+
+.logoBoxMain img{
+  width: 500px;
+}
 /* header section style end here */
 
 
@@ -475,9 +485,5 @@ font-size: x-large;
 font-weight: 500;
 font-size: xx-large;
 }
-.list-item span{
-color: var(--gray);
-font-weight: 300;
-font-size: 14px;
-}
+
 /* LEADERBOARD */
