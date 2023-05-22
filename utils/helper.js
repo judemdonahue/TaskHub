@@ -7,21 +7,30 @@ function formatDate(date, format) {
 
 function addLastCompletedTask(users) {
     users.forEach(user => {
-      let lastCompletedTask = null;
+      // Calculate the total number of tasks and the number of completed tasks
+      let totalTasks = user.tasks.length;
+      let completedTasks = user.tasks.filter(task => task.userTask.completed).length;
   
-      user.tasks.forEach(task => {
-        if (task.userTask.completed) {
-          if (!lastCompletedTask || lastCompletedTask.userTask.completion_time < task.userTask.completion_time) {
-            lastCompletedTask = task;
-          }
-        }
-      });
+      // Calculate the completion percentage
+      let completionPercentage = (completedTasks / totalTasks) * 100;
   
-      user.lastCompletedTask = lastCompletedTask;
+      // Add to the user object
+      user.totalTasks = totalTasks;
+      user.completedTasks = completedTasks;
+      user.completionPercentage = completionPercentage;
+  
+      // Find the last completed task
+      let lastCompletedTask = user.tasks.filter(task => task.userTask.completed).sort((a, b) => new Date(b.userTask.completion_time) - new Date(a.userTask.completion_time))[0];
+  
+      // Add to the user object
+      if (lastCompletedTask) {
+        user.lastCompletedTask = lastCompletedTask;
+      }
     });
   
     return users;
-  };
+  }
+  
 
 function sortUserByTime(users) {
     users.sort((a, b) => {

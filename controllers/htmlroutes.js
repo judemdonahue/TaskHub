@@ -31,11 +31,11 @@ router.get('/', async (req, res) => {
 
 router.get("/", (req, res) => res.render("homepage"));
 
-router.get("/register", (req, res) => res.render("register"))
+router.get("/register", (req, res) => res.render("register" , { hideHeader: true }))
 
 router.get("/user", (req, res) => res.render("user"));
 
-router.get("/login", (req, res) => res.render("login"));
+router.get("/login", (req, res) => res.render("login" , { hideHeader: true }));
 
 router.get("/leaderboard", (req, res) => res.render("leaderboard"));
 

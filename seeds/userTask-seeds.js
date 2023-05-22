@@ -23,7 +23,7 @@ const userTaskData = [
 
     {
         completion_time: null,
-        completed: false,
+        completed: true,
         user_id: 1,
         task_id: 3
     },
@@ -37,13 +37,13 @@ const userTaskData = [
 
     {
         completion_time: null,
-        completed: false,
+        completed: true,
         user_id: 1,
         task_id: 5
     },
     {
         completion_time: getRandomDate(),
-        completed: true,
+        completed: false,
         user_id: 2,
         task_id: 1
     },
@@ -91,7 +91,7 @@ const userTaskData = [
 
     {
         completion_time: null,
-        completed: false,
+        completed: true,
         user_id: 3,
         task_id: 3
     },
@@ -111,14 +111,14 @@ const userTaskData = [
     },
     {
         completion_time: getRandomDate(),
-        completed: true,
+        completed: false,
         user_id: 4,
         task_id: 1
     },
 
     {
         completion_time: getRandomDate(),
-        completed: true,
+        completed: false,
         user_id: 4,
         task_id: 2
     },
@@ -132,7 +132,7 @@ const userTaskData = [
 
     {
         completion_time: getRandomDate(),
-        completed: true,
+        completed: false,
         user_id: 4,
         task_id: 4
     },

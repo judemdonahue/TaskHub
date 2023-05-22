@@ -1,18 +1,36 @@
 {{!-- User login page --}}
 
 {{!-- Redirect to homepage once logged in. --}}
-<div class="container text-center w-50">
-    <form class="row mt-5">
+<header class="d-flex justify-content-center align-items-center bg-light" style="height: 100px;">
+    <h3>Welcome to the Social Task Manager!</h3>
+</header>
+
+<div class="container text-center">
+    <div class="row justify-content-center">
         <div class="col-lg-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail">
-        </div>
-        <div class="col-lg-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword">
-        </div>
-        <div class="col-12 mt-3">
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </div>
-    </form>
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h3 class="mb-4">Login</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                        </div>
+                    </form>
+                    <hr>
+                    <p class="text-muted text-center">Don't have an account? Register one here!</p>
+                    <a href="/register" class="w-100">
+                        <button class="btn btn-secondary w-100">Register</button>
+                    </a>
+                </div>
+            </div>
+        </div>  
+    </div>
 </div>

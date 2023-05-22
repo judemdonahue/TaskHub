@@ -21,9 +21,9 @@
       <ul class="list-group list-group-flush">
       <li class="list-group-item">Total points: {{this.total_points}}</li>
       <li>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-          </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{this.completionPercentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{this.completionPercentage}}%"></div>
+      </div>
       </li>
     {{#each this.tasks}}
     <li class="list-group-item container">
