@@ -9,12 +9,12 @@
   <div class="row h-2">
         <img class="mb-4 col-2" src="/assets/images/PlaceholderPFP.png" alt="user picture">
         <h5 class="mt-2 col-2">{{this.username}}</h5>
-<span class="offset-5">
+<span class="offset-4">
   Last Task Completion:<br>
   {{#if this.lastCompletedTask}}
-    {{formatDate this.lastCompletedTask.userTask.completion_time 'h:mm a'}}
+    <span class="font-weight-bold ml-5">{{formatDate this.lastCompletedTask.userTask.completion_time 'h:mm a'}}</span>
   {{else}}
-    No tasks completed yet
+    <span class="font-weight-bold">No Tasks Completed Yet</span>
   {{/if}}
 </span>
   </div>
@@ -22,23 +22,23 @@
       <li class="list-group-item">Total points: {{this.total_points}}</li>
       <li>
       <div class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{this.completionPercentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{this.completionPercentage}}%"></div>
+        <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{this.completionPercentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{this.completionPercentage}}%"></div>
       </div>
       </li>
     {{#each this.tasks}}
     <li class="list-group-item container">
       <div class="row">
-        <h5 class="col-1"></h5>
+      
         <div class="col-8">
-          <p class="text-center">
+          <p class="">
             {{this.task_name}}
             {{#if this.userTask.completed}}
-              Finished at {{formatDate this.userTask.completion_time 'h:mm a'}}
+              <span class="font-weight-bold">Finished</span> at <span class="font-weight-bold">{{formatDate this.userTask.completion_time 'h:mm a'}}</span>
                       </div>
-      <h5 class="daily col-3">+§ {{this.points}}</h5>
+      <h5 class="daily col-3 font-weight-bold">+§ {{this.points}}</h5>
       </div>
             {{else}}
-              Not Finished
+              <span class="font-weight-bold">Not Finished</span>
             {{/if}}
           </p>
         {{!-- </div>

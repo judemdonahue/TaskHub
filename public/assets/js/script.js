@@ -1,18 +1,12 @@
-const toggleSwitch = document.querySelectorAll('input[type="radio"]');
-
-toggleSwitch.forEach(function (option) {
-  option.addEventListener("change", function() {
-    if (this.checked) {
-      console.log("Selected option:", this.id);
-    }
-  });
-});
+const progressBar = document.getElementById('progress-bar');
+const completionPercentage = progressBar.getAttribute('aria-valuenow');
+const decimalValue = completionPercentage / 100;
 
 
 let options = {
     startAngle: -1.,
     size: 150,
-    value: .25,
+    value: decimalValue,
     fill: {gradient: ['#5583ee', '#41d8dd']}
   }
   $(".circle .bar").circleProgress(options).on('circle-animation-progress',
