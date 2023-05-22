@@ -1,20 +1,42 @@
-module.exports = {
-    getLastCompletionTime: (tasks) => {
-        if (tasks.length === 0) {
-            return 'No tasks completed';
+const Handlebars = require('handlebars');
+const moment = require('moment');
+
+function formatDate(date, format) {
+    return moment(date).format(format);
+}
+
+function addLastCompletedTask(users) {
+    users.forEach(user => {
+      let lastCompletedTask = null;
+  
+      user.tasks.forEach(task => {
+        if (task.userTask.completed) {
+          if (!lastCompletedTask || lastCompletedTask.userTask.completion_time < task.userTask.completion_time) {
+            lastCompletedTask = task;
+          }
         }
+      });
+  
+      user.lastCompletedTask = lastCompletedTask;
+    });
+  
+    return users;
+  };
 
-        // Filter out tasks without UserTask
-        tasks = tasks.filter(task => task.UserTask);
-
-        if (tasks.length === 0) {
-            return 'No tasks with UserTask';
-        }
-
-        // Sort tasks by completion_time in descending order
-        tasks.sort((a, b) => new Date(b.UserTask.completion_time) - new Date(a.UserTask.completion_time));
-
-        // Return the completion time of the first task in the sorted array
-        return tasks[0].UserTask.completion_time;
+function sortUserByTime(users) {
+    users.sort((a, b) => {
+    if (a.lastCompletedTask && b.lastCompletedTask) {
+      return new Date(b.lastCompletedTask.userTask.completion_time) - new Date(a.lastCompletedTask.userTask.completion_time);
+    } else if (a.lastCompletedTask) {
+      return -1;
+    } else if (b.lastCompletedTask) {
+      return 1;
     }
+    return 0;
+  })};
+
+module.exports = {
+    formatDate,
+    addLastCompletedTask,
+    sortUserByTime
 };

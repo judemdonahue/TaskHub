@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { addLastCompletedTask , sortUserByTime } = require('../utils/helper');
 const { User, Task, UserTask } = require('../models');
 
 router.get('/', async (req, res) => {
@@ -18,7 +19,12 @@ router.get('/', async (req, res) => {
         order: [['total_points', 'DESC']],
     });
 
-    const users = usersData.map((user) => user.get({ plain: true }));
+    let users = usersData.map((user) => user.get({ plain: true }));
+
+    users = addLastCompletedTask(users);
+
+    sortUserByTime(users)
+    // console.dir(users, { depth: null });
     res.render('homepage', { users });
 });
 
