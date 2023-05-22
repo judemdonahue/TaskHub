@@ -7,14 +7,15 @@
 {{!-- Task Feed List Container --}}
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col-lg-3 col-md-12">
             {{> homepage-sidebar}}
         </div>
-        <div class="col-6">
+        <div class="col-lg-6 col-md-12">
             {{#each users}}
             {{> user-card}}
             {{/each}}
         </div>
+        <div class="col-lg-3"></div>
     </div>
 
 </div>
