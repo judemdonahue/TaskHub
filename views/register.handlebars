@@ -1,5 +1,38 @@
 {{!-- User registration page --}}
+<head>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- Your script -->
+    <script>
+        $(document).ready(function() {
+            $('#register-btn').on('click', function(e) {
+                e.preventDefault();
+                console.log('Button clicked');
+
+                var email = $('#inputEmail').val();
+                var username = $('#inputUsername').val();
+                var password = $('#inputPassword').val();
+
+                // Send the POST request.
+                $.ajax("/register", {
+                    type: "POST",
+                    data: {
+                        email: email,
+                        username: username,
+                        password: password
+                    }
+                }).then(function() {
+                    // If the request is successful, redirect to the homepage
+                    window.location.href = "/";
+                }).fail(function(error) {
+                    // If there's an error, log the error
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script>
+</head>
 {{!-- Redirect to homepage once registered. --}}
 <div class="container text-center">
     <div class="row justify-content-center">
@@ -7,7 +40,7 @@
             <div class="card mt-5">
                 <div class="card-body">
                     <h3 class="mb-4">Register</h3>
-                    <form>
+                    <form id="register-form">
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Email</label>
                             <input type="email" class="form-control" id="inputEmail">
@@ -25,7 +58,7 @@
                             <input type="password" class="form-control" id="confirmPassword" placeholder="Passwords must match!">
                         </div>
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-primary w-100">Sign up!</button>
+                            <button type="button" id="register-btn" class="btn btn-primary w-100">Sign up!</button>
                         </div>
                     </form>
                 </div>

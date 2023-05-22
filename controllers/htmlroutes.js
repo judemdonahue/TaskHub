@@ -28,9 +28,6 @@ router.get('/', async (req, res) => {
     res.render('homepage', { users });
 });
 
-
-router.get("/", (req, res) => res.render("homepage"));
-
 router.get("/register", (req, res) => res.render("register" , { hideHeader: true }))
 
 router.get("/user", (req, res) => res.render("user"));
