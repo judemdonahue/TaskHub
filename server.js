@@ -37,7 +37,6 @@ app.use(passport.session());
 app.use((req, res, next) => {
   // if user is authenticated in the session, carry on 
   if (req.isAuthenticated()) {
-    // make user object available in handlebars templates
     res.locals.user = req.user.get({ plain: true });
   }
   next();
