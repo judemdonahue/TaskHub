@@ -13,7 +13,7 @@ router.post('/register', async (req, res) => {
       const newUser = await User.create({ username, email, password });
 
       // Find the tasks that you want to assign to the new user
-      const tasks = await Task.findAll({ where: { task_name: ['Brush Teeth', 'Make bed', '30 minute exercise', 'Quick home cleaning', 'Eat'] } });
+      const tasks = await Task.findAll({ where: { task_name: ['Brush Teeth', 'Make bed', '30 minute exercise', 'Shower', 'Eat Food'] } });
 
       // Assign tasks to the new user
       await newUser.addTasks(tasks);

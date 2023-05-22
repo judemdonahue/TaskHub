@@ -18,12 +18,12 @@ const taskData = [
     },
 
     {
-        task_name: 'Quick home cleaning',
+        task_name: 'Shower',
         points: 15
     },
 
     {
-        task_name: 'Eat',
+        task_name: 'Eat Food',
         points: 5
     }
 

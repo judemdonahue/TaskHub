@@ -3,6 +3,7 @@
 {{!-- Login button if not logged in --}}
 {{!-- Username. Link to /partials/user.handlebars --}}
 {{!-- Nav functions --}}
+<script src="../../assets/js/taskComplete.js"></script>
 
 <div class="d-flex justify-content-center mt-3 ">
     <div class="col-11">
@@ -15,9 +16,10 @@
                 </div>
             
                 <div class="pages align-items-center">
-                    <h4 class="mini-headign d-flex align-items-center">Profile</h4>
+                    <h4 class="mini-heading d-flex align-items-center">Profile</h4>
         
                     <div class="pages profile d-flex">
+                        <h3 id="total-points"></h3>
                         <h2 class="text-center">+§ X This Week..</h2>
                     </div>
         
@@ -35,10 +37,31 @@
                     </div>
                     <!-- Prog ring end -->
         
-                    <button class="see-more-btn">See more <i class="fa-solid fa-angle-down"></i></button>
+                    <button class="see-more-btn" type="button" data-toggle="collapse" data-target="#userTasks" aria-expanded="false" aria-controls="userTasks">
+                        See more <i class="fa-solid fa-angle-down"></i>
+                    </button>
+
+                    <div class="collapse" id="userTasks">
+                    <!-- Loop through user tasks -->
+                    Click what you have completed!
+                    <ul>
+                        {{#each currentUser.tasks}}
+                            <li>
+                                <button class="btn complete-task" data-task-id="{{this.id}}">
+                                    {{#if this.completed}}
+                                        Completed!
+                                    {{else}}
+                                        {{this.task_name}}
+                                    {{/if}}
+                                </button>
+                            </li>
+                        {{/each}}
+                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- user-menu end -->
+
