@@ -25,7 +25,6 @@
   --border: #3f4172;
 }
 
-
 body{
   background: var(--background);
   -webkit-text-size-adjust: 100%;
@@ -70,14 +69,13 @@ header{
   margin-top: -3px;
   margin-left: 3px;
 }
-.logoBox{
+.logo{
   width: 7%;
 }
-.logoBox img{
+.logo img{
   width: 200px;
 }
-
-.logoBoxMain img{
+.logoMain img{
   width: 500px;
 }
 /* header section style end here */
