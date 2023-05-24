@@ -1,7 +1,7 @@
 const Score = require('./scores');
 const User = require('./user');
 const Task = require('./Task');
-const UserTask = require('./userTask');
+const UserTask = require('./UserTask');
 
 User.belongsToMany(Task, {
     through: UserTask,
