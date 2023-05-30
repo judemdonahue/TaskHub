@@ -2,7 +2,7 @@
 
 
 ## Description
-The Social Task Managing app is designed to leverage the power of social accountability to motivate individuals to complete their daily tasks.
+The TaskHub app is designed to leverage the power of social accountability to motivate individuals to complete their daily tasks.
 
 The motivation behind this app was to provide a solution for individuals who struggle with procrastination or lack motivation to complete their daily tasks and goals. By incorporating social accountability, the app aims to create a sense of urgency and motivation by allowing others to see an individual's progress.
 
@@ -10,7 +10,7 @@ The project was built with the intention of addressing the common problem of tas
 
 The app solves the problem of low motivation and procrastination by introducing social pressure as a motivator. It provides users with a platform where they can share their daily tasks and goals with others who can see their progress. Knowing that others can see their achievements or lack thereof creates a sense of responsibility and accountability, thus encouraging users to complete their tasks on time.
 
-During the development of the Social Task Managing app, several valuable lessons were learned. Firstly, the power of social accountability was reaffirmed as an effective motivator for individuals. The app demonstrated that the fear of public exposure and the desire to avoid the shame of not completing tasks can be strong motivational factors.
+During the development of the TaskHub, several valuable lessons were learned. Firstly, the power of social accountability was reaffirmed as an effective motivator for individuals. The app demonstrated that the fear of public exposure and the desire to avoid the shame of not completing tasks can be strong motivational factors.
 
 ## Table of Contents
 
